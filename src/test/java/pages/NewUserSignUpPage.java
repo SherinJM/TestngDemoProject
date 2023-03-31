@@ -27,61 +27,61 @@ public class NewUserSignUpPage {
 	By drpdwn_hobbies = By.xpath("//select[@id='hobbies']");
 	By btn_SignUp = By.xpath("//button[contains(text(),'Sign')]");
 
-	public void enterUserName() {
+	public void enterUserName(String userName) {
 		HelperClass.waitForElement(driver, txt_userName);
-		driver.findElement(txt_userName).sendKeys("Mathew");
+		driver.findElement(txt_userName).sendKeys(userName);
 	}
 
-	public void enterEmail() {
+	public void enterEmail(String email) {
 		HelperClass.waitForElement(driver, txt_email);
-		driver.findElement(txt_email).sendKeys("mathew1@email.com");
+		driver.findElement(txt_email).sendKeys(email);
 	}
 
-	public void enterPassword() {
+	public void enterPassword(String password) {
 		HelperClass.waitForElement(driver, txt_password);
-		driver.findElement(txt_password).sendKeys("password");
+		driver.findElement(txt_password).sendKeys(password);
 	}
 
-	public void selectInterests() {
+	public void selectInterests(String interest) {
 		List<WebElement> interests = driver.findElements(chkbx_interests);
 		for (WebElement element : interests) {
-			if (element.getText().contains("Automation")) {
+			if (element.getText().contains(interest)) {
 				element.click();
 				break;
 			}
 		}
 	}
 
-	public void selectGender() {
+	public void selectGender(String genderValue) {
 
 		List<WebElement> gender = driver.findElements(radio_gender_list);
 
 		for (WebElement element : gender) {
 			String genderName = element.getAttribute("value");
 			System.out.println("Gender is: " + genderName);
-			if (genderName.contains("Male")) {
+			if (genderName.contains(genderValue)) {
 				element.click();
 				break;
 			}
 		}
 	}
 
-	public void selectState() throws Exception {
+	public void selectState(String state) throws Exception {
 		Select select = new Select(driver.findElement(drpdwn_state));
 		List<WebElement> element = select.getOptions();
 		for (WebElement ele : element) {
-			if (ele.getText().contains("Kerala")) {
+			if (ele.getText().contains(state)) {
 				ele.click();
 				break;
 			}
 		}
 	}
 
-	public void selectHobbies() {
+	public void selectHobbies(String hobbies) {
 		Select select = new Select(driver.findElement(drpdwn_hobbies));
 		List<WebElement> element = select.getOptions();
 		for (WebElement ele : element) {
-			if (ele.getText().contains("Reading")) {
+			if (ele.getText().contains(hobbies)) {
 				ele.click();
 				break;
 			}

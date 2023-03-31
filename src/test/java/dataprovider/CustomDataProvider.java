@@ -12,5 +12,12 @@ public class CustomDataProvider {
 		Object arr[][] = ExcelReader.getDataFromSheet("login");
 		return arr;
 	}
+	
+	@DataProvider(name = "signup")
+	public static Object[][] getSignUpData() {
+
+		Object arr[][] = ExcelReader.getDataFromSheet("signup");
+		return arr;
+	}
 
 }

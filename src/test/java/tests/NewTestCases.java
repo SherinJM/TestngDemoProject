@@ -3,30 +3,34 @@ package tests;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import dataprovider.CustomDataProvider;
 import pages.LoginPage;
 import pages.NewUserSignUpPage;
 
 public class NewTestCases extends BaseClass {
-	@Test(priority = 0)
-	public void signUpTest() throws Exception {
+
+	@Test(priority = 0, dataProvider = "signup", dataProviderClass = CustomDataProvider.class)
+	public void signUpTest(String userName, String email, String password, String interests, String gender,
+			String state, String hobbies) throws Exception {
+		
 		lp = new LoginPage(driver);
 		Thread.sleep(5000);
 		lp.clickSignUp();
 		sp = new NewUserSignUpPage(driver);
-		sp.enterUserName();
+		sp.enterUserName(userName);
 		Thread.sleep(1000);
-		sp.enterEmail();
+		sp.enterEmail(email);
 		Thread.sleep(1000);
-		sp.enterPassword();
+		sp.enterPassword(password);
 		Thread.sleep(1000);
-		sp.selectInterests();
+		sp.selectInterests(interests);
 		Thread.sleep(1000);
-		sp.selectGender();
+		sp.selectGender(gender);
 		Thread.sleep(1000);
-		sp.selectState();
+		sp.selectState(state);
 		Thread.sleep(1000);
-		sp.selectHobbies();
-		Thread.sleep(1000);		
+		sp.selectHobbies(hobbies);
+		Thread.sleep(1000);
 		sp.clickSignUp();
 	}
 }
