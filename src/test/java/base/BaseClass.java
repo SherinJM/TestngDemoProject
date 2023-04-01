@@ -26,18 +26,24 @@ public class BaseClass {
 	public ManageCourses mc;
 	public NewUserSignUpPage sp;
 
-	@BeforeSuite
+	@BeforeClass
 	public void browserSetUp() throws Exception {
+		System.out.println("B SetUp");
 		Reporter.log("Log:Info-Setting up browser...");
 		driver = BrowserFactory.startBrowser(ConfigurationReader.getProperty("browser"),
 				ConfigurationReader.getProperty("url"));
 		Reporter.log("Log:Info-Browser is set up...");
 	}
 
-	@AfterSuite
+	@AfterClass
 	public void tearDown() {
-		Reporter.log("Log:Info-Quitting browser...");
-		driver.quit();
-		Reporter.log("Log:Info-Browser is quit...");
+
+	
+			System.out.println("B TearDown");
+			Reporter.log("Log:Info-Quitting browser...");
+			driver.quit();
+			Reporter.log("Log:Info-Browser is quit...");
+		
+
 	}
 }

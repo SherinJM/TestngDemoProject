@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  regression</title>
+<title>TestNG:  Test</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>regression</h2><table border='1' align="center">
+<h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Apr 01 14:02:19 IST 2023</td>
+<td>Started on:</td><td>Sat Apr 01 13:58:39 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>11 seconds (11828 ms)</td>
+<tr><td>Total time:</td><td>47 seconds (47966 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -95,12 +95,8 @@ function toggleAllBoxes() {
 	at pages.LoginPage.brokenLinks(LoginPage.java:61)
 	at tests.AdditionalTestCases.validateBrokenLinks(AdditionalTestCases.java:15)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1925576180", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1925576180'><pre>java.net.UnknownHostException: learn-automation
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1629595613", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1629595613'><pre>java.net.UnknownHostException: learn-automation
 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
 	at java.base/java.net.Socket.connect(Socket.java:633)
@@ -134,16 +130,21 @@ function toggleAllBoxes() {
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>4</td>
-<td>tests.AdditionalTestCases@69e153c5</td></tr>
+<td>tests.AdditionalTestCases@1ffaf86</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -153,15 +154,35 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.AdditionalTestCases.validateCountOfButtons()'><b>validateCountOfButtons</b><br>Test class: tests.AdditionalTestCases</td>
+<td title='tests.TestCases.dashboardTest()'><b>dashboardTest</b><br>Test class: tests.TestCases</td>
 <td></td>
 <td>0</td>
-<td>tests.AdditionalTestCases@69e153c5</td></tr>
+<td>tests.TestCases@1c7696c6</td></tr>
 <tr>
 <td title='tests.AdditionalTestCases.validateSample()'><b>validateSample</b><br>Test class: tests.AdditionalTestCases</td>
 <td></td>
 <td>0</td>
-<td>tests.AdditionalTestCases@69e153c5</td></tr>
+<td>tests.AdditionalTestCases@1ffaf86</td></tr>
+<tr>
+<td title='tests.AdditionalTestCases.validateCountOfButtons()'><b>validateCountOfButtons</b><br>Test class: tests.AdditionalTestCases</td>
+<td></td>
+<td>0</td>
+<td>tests.AdditionalTestCases@1ffaf86</td></tr>
+<tr>
+<td title='tests.NewTestCases.signUpTest()'><b>signUpTest</b><br>Test class: tests.NewTestCases<br>Parameters: sherin, sherin@email.com, password, Automation, Male, Kerala, Reading</td>
+<td></td>
+<td>16</td>
+<td>tests.NewTestCases@38cee291</td></tr>
+<tr>
+<td title='tests.TestCases.loginTest()'><b>loginTest</b><br>Test class: tests.TestCases<br>Parameters: admin@email.com, admin@123</td>
+<td></td>
+<td>5</td>
+<td>tests.TestCases@1c7696c6</td></tr>
+<tr>
+<td title='tests.TestCases.manageCategoryTest()'><b>manageCategoryTest</b><br>Test class: tests.TestCases</td>
+<td></td>
+<td>6</td>
+<td>tests.TestCases@1c7696c6</td></tr>
 </table><p>
 </body>
 </html>

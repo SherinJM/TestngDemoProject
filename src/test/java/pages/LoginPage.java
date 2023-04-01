@@ -52,6 +52,7 @@ public class LoginPage {
 	}
 
 	public void brokenLinks() throws Exception {
+		
 		List<WebElement> links = driver.findElements(lnks);
 		for (WebElement lnk : links) {
 			String href = lnk.getAttribute("href");

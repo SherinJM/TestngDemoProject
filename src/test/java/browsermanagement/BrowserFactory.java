@@ -25,10 +25,9 @@ public class BrowserFactory {
 		} else {
 			System.out.println("Sorry, browser is not supported");
 		}
-		System.out.println(url);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+		driver.manage().window().maximize();	
 		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
 		return driver;
 

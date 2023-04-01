@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [SuiteAll]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="regression(failed)">
+<suite thread-count="2" parallel="tests" name="Failed suite [SuiteAll]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="regression(failed)">
     <classes>
       <class name="tests.AdditionalTestCases">
         <methods>
@@ -12,4 +12,27 @@
       </class> <!-- tests.AdditionalTestCases -->
     </classes>
   </test> <!-- regression(failed) -->
+  <test thread-count="2" parallel="tests" name="smoke(failed)">
+    <classes>
+      <class name="tests.NewTestCases">
+        <methods>
+          <include name="tearDown"/>
+          <include name="signUpTest" invocation-numbers="0"/>
+          <include name="browserSetUp"/>
+        </methods>
+      </class> <!-- tests.NewTestCases -->
+    </classes>
+  </test> <!-- smoke(failed) -->
+  <test thread-count="2" parallel="tests" name="endtoend(failed)">
+    <classes>
+      <class name="tests.TestCases">
+        <methods>
+          <include name="tearDown"/>
+          <include name="loginTest"/>
+          <include name="manageCategoryTest"/>
+          <include name="browserSetUp"/>
+        </methods>
+      </class> <!-- tests.TestCases -->
+    </classes>
+  </test> <!-- endtoend(failed) -->
 </suite> <!-- Failed suite [SuiteAll] -->

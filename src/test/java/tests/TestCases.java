@@ -19,6 +19,7 @@ public class TestCases extends BaseClass {
 
 	@Test(priority = 0, dataProvider = "loginDataSet", dataProviderClass = CustomDataProvider.class)
 	public void loginTest(String userName, String password) throws Exception {
+		System.out.println(Thread.currentThread().getId());
 		lp = new LoginPage(driver);
 		lp.enterUsername(userName);
 		lp.enterPassword(password);
@@ -33,6 +34,7 @@ public class TestCases extends BaseClass {
 
 	@Test(priority = 1, dependsOnMethods = "loginTest")
 	public void dashboardTest() {
+		System.out.println(Thread.currentThread().getId());
 		db = new DashboardPage(driver);
 		db.cartAddition();
 		By btn2_Cart = By.xpath("//span[@class='count']");
@@ -44,6 +46,7 @@ public class TestCases extends BaseClass {
 
 	@Test(priority = 2, dependsOnMethods = "loginTest")
 	public void manageCategoryTest() throws Exception {
+		System.out.println(Thread.currentThread().getId());
 		mc = new ManageCourses(driver);
 		mc.clickManage();
 		mc.clickManageCategories();

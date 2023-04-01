@@ -12,7 +12,7 @@ public class NewTestCases extends BaseClass {
 	@Test(priority = 0, dataProvider = "signup", dataProviderClass = CustomDataProvider.class)
 	public void signUpTest(String userName, String email, String password, String interests, String gender,
 			String state, String hobbies) throws Exception {
-		
+		System.out.println(Thread.currentThread().getId());
 		lp = new LoginPage(driver);
 		Thread.sleep(5000);
 		lp.clickSignUp();
