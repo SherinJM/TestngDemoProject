@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class ConfigurationReader {
 
-	public static String getProperty(String key) throws Exception {
+	public synchronized static String getProperty(String key) throws Exception {
 
 		File file = new File(".//Config//Config.properties");
 		FileInputStream fis;

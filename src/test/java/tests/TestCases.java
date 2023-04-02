@@ -21,6 +21,7 @@ public class TestCases extends BaseClass {
 	public void loginTest(String userName, String password) throws Exception {
 		System.out.println(Thread.currentThread().getId());
 		lp = new LoginPage(driver);
+		System.out.println("Driver value :"+driver);
 		lp.enterUsername(userName);
 		lp.enterPassword(password);
 		lp.clickSignIn();

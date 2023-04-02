@@ -14,6 +14,7 @@ public class NewTestCases extends BaseClass {
 			String state, String hobbies) throws Exception {
 		System.out.println(Thread.currentThread().getId());
 		lp = new LoginPage(driver);
+		System.out.println("Driver value :"+driver);
 		Thread.sleep(5000);
 		lp.clickSignUp();
 		sp = new NewUserSignUpPage(driver);
