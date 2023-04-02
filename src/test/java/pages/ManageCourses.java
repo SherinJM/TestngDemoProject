@@ -38,8 +38,7 @@ public class ManageCourses {
 
 	public void addNewCategory() throws Exception {
 
-		Set<String> handles = driver.getWindowHandles();
-		System.out.println(handles.size());
+		Set<String> handles = driver.getWindowHandles();		
 
 		for (String name : handles) {
 			String curUrl = driver.switchTo().window(name).getCurrentUrl();

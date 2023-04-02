@@ -58,7 +58,6 @@ public class NewUserSignUpPage {
 
 		for (WebElement element : gender) {
 			String genderName = element.getAttribute("value");
-			System.out.println("Gender is: " + genderName);
 			if (genderName.contains(genderValue)) {
 				element.click();
 				break;

@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import browsermanagement.BrowserFactory;
 import configurationManagement.ConfigurationReader;
@@ -20,30 +21,25 @@ import pages.NewUserSignUpPage;
 
 public class BaseClass {
 
-	public WebDriver driver;
+	public WebDriver driver=null;;
 	public LoginPage lp;
 	public DashboardPage db;
 	public ManageCourses mc;
 	public NewUserSignUpPage sp;
-
+	
+	@Parameters("Browser")
 	@BeforeClass
-	public void browserSetUp() throws Exception {
-		System.out.println("B SetUp");
-		Reporter.log("Log:Info-Setting up browser...");
-		driver = BrowserFactory.startBrowser(ConfigurationReader.getProperty("browser"),
-				ConfigurationReader.getProperty("url"));
-		Reporter.log("Log:Info-Browser is set up...");
+	public void browserSetUp(String browserName) throws Exception {
+		System.out.println("Log:Info-Setting up browser...");
+		driver = BrowserFactory.startBrowser(browserName, ConfigurationReader.getProperty("url"));
+		System.out.println("Log:Info-Browser is set up...");
 	}
 
 	@AfterClass
 	public void tearDown() {
-
-	
-			System.out.println("B TearDown");
-			Reporter.log("Log:Info-Quitting browser...");
-			driver.quit();
-			Reporter.log("Log:Info-Browser is quit...");
-		
-
+		System.out.println("Log:Info-Quitting browser...");
+		driver.quit();
+		System.out.println("Log:Info-Browser is quit...");
 	}
+
 }

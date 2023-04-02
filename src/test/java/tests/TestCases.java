@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,9 +14,16 @@ import dataprovider.CustomDataProvider;
 import pages.DashboardPage;
 import pages.LoginPage;
 import pages.ManageCourses;
+import pages.NewUserSignUpPage;
 import utilities.HelperClass;
 
 public class TestCases extends BaseClass {
+	public WebDriver driver=null;;
+	public LoginPage lp;
+	public DashboardPage db;
+	public ManageCourses mc;
+	public NewUserSignUpPage sp;
+	
 
 	@Test(priority = 0, dataProvider = "loginDataSet", dataProviderClass = CustomDataProvider.class)
 	public void loginTest(String userName, String password) throws Exception {

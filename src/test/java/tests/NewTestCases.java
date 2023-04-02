@@ -1,14 +1,12 @@
 package tests;
 
 import org.testng.annotations.Test;
-
 import base.BaseClass;
 import dataprovider.CustomDataProvider;
 import pages.LoginPage;
 import pages.NewUserSignUpPage;
 
 public class NewTestCases extends BaseClass {
-
 	@Test(priority = 0, dataProvider = "signup", dataProviderClass = CustomDataProvider.class)
 	public void signUpTest(String userName, String email, String password, String interests, String gender,
 			String state, String hobbies) throws Exception {
